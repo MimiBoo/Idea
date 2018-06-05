@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+    {% block head %}
+    <meta charset="utf-8">
+    <title>{{ user.first_name}} {{user.last_name }}</title>
+    {% endblock %}
+
+    {% block body %}
+    <br>
+    <br>
+    <br>
+      <div class="container">
+        <h1>Edit profile</h1>
+        <form method="post">
+          {% csrf_token %}
+          {{ form.as_p }}
+          <button class="btn btn-success" type="submit" name="button">Save</button>
+          <a href="/account/profile"><button class="btn btn-secondary" type="button">Cancel</button></a>
+          <a href="/account/change-password"><button class="btn btn-secondary" type="button">Change Password</button></a>
+        </form>
+        <br>
+        <br>
+      </div>
+    {% endblock %}

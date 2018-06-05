@@ -1,0 +1,36 @@
+*{
+  padding: 0;
+  margin: 0;
+}
+
+body{
+  background-color: #F2F3F4;
+}
+
+.jumbotron{
+  margin-top: 100px;
+  background-color: #CACFD2;
+}
+.jumbotron h1{
+  font-size: 3.2em;
+  margin-top: 0;
+  padding: 0;
+  position: relative;
+}
+
+.jumbotron form{
+  background-color: #CACFD2 ;
+}
+
+.jumbotron input{
+  width: 230px;
+  height: 35px;
+  border-radius: 2px;
+  border: 0;
+}
+.jumbotron p{
+  font-family: 'Roboto',monospace;
+  font-size: 1.2em;
+  margin: 0 0 10 0;
+  padding: 0;
+}
