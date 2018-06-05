@@ -8,8 +8,7 @@ body{
 }
 
 .jumbotron{
-  width: auto;
-
+  margin-top: 100px;
   background-color: #CACFD2;
 }
 .jumbotron h1{
@@ -32,8 +31,6 @@ body{
 .jumbotron p{
   font-family: 'Roboto',monospace;
   font-size: 1.2em;
-}
-.jumbotron span{
-  font-family: 'Roboto',monospace;
-  font-size: .9em;
+  margin: 0 0 10 0;
+  padding: 0;
 }

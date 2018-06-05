@@ -6,6 +6,7 @@ from django.contrib.auth import update_session_auth_hash
 from django.contrib.auth.decorators import login_required
 
 # Create your views here.
+
 def home(request):
     return render(request, 'accounts/home.html')
 
@@ -21,7 +22,6 @@ def register(request):
         args = {'form': form}
         return render(request, 'accounts/reg_form.html', args)
 
-@login_required
 def view_profile(request):
     args = {'user': request.user}
     return render(request, 'accounts/profile.html', args)
