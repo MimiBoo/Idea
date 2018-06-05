@@ -21,10 +21,10 @@
 .navbar-inverse .navbar-nav .active a,
 .navbar-inverse .navbar-nav .active a:focus,
 .navbar-inverse .navbar-nav .active a:hover{
-    color: #FFF;
+    color: #fff;
     background-color: #212F3D;
 }
 
 .navbar-inverse .navbar-nav li a {
-  color: #D5D5D5;
+  color: #d5d5;
 }

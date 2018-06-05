@@ -22,7 +22,19 @@
           <form method="post">
               <center><h1>REGISTER</h1></center>
               {% csrf_token %}
-              {{ form.as_p }}
+              <!-- {{ form.as_p }} -->
+              {{ form.first_name.label_tag }}
+              {{ form.first_name }}
+              {{ form.last_name.label_tag }}
+              {{ form.last_name }}
+              {{ form.username.label_tag }}
+              {{ form.username }}
+              {{ form.email.label_tag }}
+              {{ form.email }}
+              {{ form.password1.label_tag }}
+              {{ form.password1 }}
+              {{ form.password2.label_tag }}
+              {{ form.password2 }}
             <center><button class="btn btn-success form-control" type="submit">Register</button></center>
             <br>
             <center> <a href="/">Cancel</a> </center>

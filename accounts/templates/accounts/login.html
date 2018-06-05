@@ -22,7 +22,7 @@
           <form method="post">
               <center><h1>LOGIN</h1></center>
               {% csrf_token %}
-              {{ form.as_p }}
+              {{ form.as_p }}            
             <center><button class="btn btn-success form-control" type="submit">Login</button></center>
             <center><a class="nav-link" href="/reset-password/">Forgot password?</a></center>
             <br>

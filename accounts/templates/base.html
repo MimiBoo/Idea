@@ -28,13 +28,18 @@
             <a class="navbar-brand" href="/">IDEA</a>
           </div>
           <div class="collapse navbar-collapse" id="MyNavbar">
+            {% if user.is_authenticated %}
             <ul class="nav navbar-nav navbar-right">
               <li class="active"><a href="/">Home</a> </li>
               <li><a href="/account/profile/">@{{ user }}</a> </li>
               <li><a href="/account/logout/">Logout</a> </li>
+            </ul>
+            {% else %}
+            <ul class="nav navbar-nav navbar-right">
               <li><a href="/account/login/">Login</a> </li>
               <li><a href="/account/register/">Register</a> </li>
             </ul>
+            {% endif %}
           </div>
       </div>
     </nav>
