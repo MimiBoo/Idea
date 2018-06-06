@@ -36,7 +36,8 @@
               {{ form.password2 }}
             <center><button class="btn btn-success form-control" type="submit">Register</button></center>
             <br>
-            <center> <a href="/">Cancel</a> </center>
+            <center> <a href="{% url 'login' %}">Allready registered</a> </center>
+            <center> <a href="{% url 'home' %}">Cancel</a> </center>
           </form>
         </div>
       </div>

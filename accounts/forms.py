@@ -5,7 +5,7 @@ from django.contrib.auth.forms import UserCreationForm, UserChangeForm
 
 class RegistrationForm(UserCreationForm):
     email = forms.EmailField(required=True)
-    
+
     # def __init__(self, *args, **kwargs):
     #     super(RegistrationForm, self).__init__(*args, **kwargs)
     #     for fieldname in ['username', 'password1', 'password2']:

@@ -13,7 +13,20 @@
         <h1>Edit profile</h1>
         <form method="post">
           {% csrf_token %}
-          {{ form.as_p }}
+          {{ form.email.label_tag }}
+          {{ form.email }}
+          <br>
+          <br>
+          {{ form.first_name.label_tag }}
+          {{ form.first_name }}
+          <br>
+          <br>
+          {{ form.last_name.label_tag }}
+          {{ form.last_name }}
+          <br>
+          <br>
+          <p>Raw passwords are not stored, so there is no way to see this user's password, but you can change the password using the button down below</p>
+          <br>
           <button class="btn btn-success" type="submit" name="button">Save</button>
           <a href="/account/profile"><button class="btn btn-secondary" type="button">Cancel</button></a>
           <a href="/account/change-password"><button class="btn btn-secondary" type="button">Change Password</button></a>

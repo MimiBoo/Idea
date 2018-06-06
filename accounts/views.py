@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect
+from django.urls import reverse
 from accounts.forms import RegistrationForm, EditProfileForm
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserChangeForm, PasswordChangeForm
@@ -15,24 +16,26 @@ def register(request):
         form = RegistrationForm(request.POST)
         if form.is_valid:
             form.save()
-            return redirect('/account/login/')
+            return redirect(reverse('login'))
     else:
         form = RegistrationForm()
 
         args = {'form': form}
         return render(request, 'accounts/reg_form.html', args)
 
+@login_required
 def view_profile(request):
     args = {'user': request.user}
     return render(request, 'accounts/profile.html', args)
 
+@login_required
 def edit_profile(request):
     if request.method == 'POST':
         form = EditProfileForm(request.POST, instance=request.user)
 
         if form.is_valid():
             form.save()
-            return redirect('/account/profile/')
+            return redirect(reverse('edit_profile'))
 
     else:
         form = EditProfileForm(instance=request.user)
@@ -40,6 +43,7 @@ def edit_profile(request):
         args = {'form': form}
         return render(request, 'accounts/edit_profile.html', args)
 
+@login_required
 def change_password(request):
     if request.method == 'POST':
         form = PasswordChangeForm(data=request.POST, user=request.user)
@@ -47,9 +51,9 @@ def change_password(request):
         if form.is_valid():
             form.save()
             update_session_auth_hash(request, form.user)
-            return redirect('/account/profile/')
+            return redirect(reverse('view_profile'))
         else:
-            return redirect('/account/change-password')
+            return redirect(reverse('change_password'))
     else:
         form = PasswordChangeForm(user=request.user)
 
